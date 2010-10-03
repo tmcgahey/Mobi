@@ -6,16 +6,7 @@
 <web-app>
   
   <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.mobi.iou.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/iou/greet</url-pattern>
-  </servlet-mapping>
-  
+ 
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>IOU.html</welcome-file>
