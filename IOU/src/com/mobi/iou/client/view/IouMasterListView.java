@@ -51,9 +51,10 @@ public class IouMasterListView extends Composite implements
 
 
 	public void setData(List<String> data) {
-		int rowCount = SummaryTable.getRowCount();
+		int rowCount = SummaryTable.getRowCount() + 1;
 		
 		SummaryTable.setText(rowCount, 0, "register entry");
+		SummaryTable.setText(rowCount, 1, "register entry2");
 	}
 	
 

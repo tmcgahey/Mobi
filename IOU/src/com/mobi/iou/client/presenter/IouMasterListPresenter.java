@@ -43,7 +43,7 @@ public class IouMasterListPresenter implements Presenter {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				
+				populateSummary();
 			}
 		});
 
