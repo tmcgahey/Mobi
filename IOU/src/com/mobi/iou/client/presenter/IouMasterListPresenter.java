@@ -1,13 +1,14 @@
 package com.mobi.iou.client.presenter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
-import com.google.gwt.event.dom.client.HasKeyPressHandlers;
 import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
 public class IouMasterListPresenter implements Presenter {
@@ -15,15 +16,15 @@ public class IouMasterListPresenter implements Presenter {
 	public interface Display {
 		HasClickHandlers getBtnAddIOU();
 
-		HasClickHandlers getTxtName();
+		TextBox getTxtName();
 
-		HasClickHandlers getTxtEmail();
+		TextBox getTxtEmail();
 
-		HasClickHandlers getTxtDescription();
+		TextBox getTxtDescription();
 
-		HasKeyPressHandlers getTxtAmount();
+		TextBox getTxtAmount();
 
-		void setData(List<String> data);
+		void setData(List<String[]> data);
 
 		Widget asWidget();
 	}
@@ -50,7 +51,17 @@ public class IouMasterListPresenter implements Presenter {
 	}
 
 	void populateSummary() {
-		display.setData(null);
+		 
+
+		String lineItem[] = new String[4];
+		List<String[]> tableData = new ArrayList<String[]>();
+		lineItem[0] = display.getTxtName().getText();
+		lineItem[1] = display.getTxtEmail().getText();
+		lineItem[2] = display.getTxtDescription().getText();
+		lineItem[3] = display.getTxtAmount().getText();
+		tableData.add(lineItem);
+		
+		display.setData(tableData);
 	}
 	
 	@Override

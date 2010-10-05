@@ -3,7 +3,6 @@ package com.mobi.iou.client.view;
 import java.util.List;
 
 import com.google.gwt.event.dom.client.HasClickHandlers;
-import com.google.gwt.event.dom.client.HasKeyPressHandlers;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.mobi.iou.client.presenter.IouMasterListPresenter;
@@ -30,31 +29,31 @@ public class IouMasterListView extends Composite implements
 	}
 
 
-	public HasClickHandlers getTxtName() {
+	public TextBox getTxtName() {
 		return txtName;
 	}
 
 
-	public HasClickHandlers getTxtEmail() {
+	public TextBox getTxtEmail() {
 		return txtEmail;
 	}
 
 
-	public HasClickHandlers getTxtDescription() {
+	public TextBox getTxtDescription() {
 		return txtDescription;
 	}
 
 
-	public HasKeyPressHandlers getTxtAmount() {
+	public TextBox getTxtAmount() {
 		return txtAmount;
 	}
 
 
-	public void setData(List<String> data) {
+	public void setData(List<String[]> data) {
 		int rowCount = SummaryTable.getRowCount() + 1;
 		
-		SummaryTable.setText(rowCount, 0, "register entry");
-		SummaryTable.setText(rowCount, 1, "register entry2");
+		SummaryTable.setText(rowCount, 0, data.get(0)[0]);
+		SummaryTable.setText(rowCount, 1, data.get(0)[1]);
 	}
 	
 
