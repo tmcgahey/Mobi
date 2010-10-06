@@ -3,6 +3,7 @@ package com.mobi.iou.client.presenter;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
@@ -10,6 +11,8 @@ import com.google.gwt.event.shared.HandlerManager;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.mobi.iou.client.IOUSummary;
+import com.mobi.iou.client.IOUSummaryAsync;
 
 public class IouMasterListPresenter implements Presenter {
 
@@ -51,14 +54,14 @@ public class IouMasterListPresenter implements Presenter {
 	}
 
 	void populateSummary() {
-		 
 
-		String lineItem[] = new String[4];
+		//IOUSummaryAsync rpcService = GWT.create(IOUSummary.class);
+		
+		String lineItem[] = new String[3];
 		List<String[]> tableData = new ArrayList<String[]>();
 		lineItem[0] = display.getTxtName().getText();
-		lineItem[1] = display.getTxtEmail().getText();
-		lineItem[2] = display.getTxtDescription().getText();
-		lineItem[3] = display.getTxtAmount().getText();
+		lineItem[1] = display.getTxtDescription().getText();
+		lineItem[2] = display.getTxtAmount().getText();
 		tableData.add(lineItem);
 		
 		display.setData(tableData);

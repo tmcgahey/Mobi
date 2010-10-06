@@ -50,10 +50,22 @@ public class IouMasterListView extends Composite implements
 
 
 	public void setData(List<String[]> data) {
-		int rowCount = SummaryTable.getRowCount() + 1;
 		
-		SummaryTable.setText(rowCount, 0, data.get(0)[0]);
-		SummaryTable.setText(rowCount, 1, data.get(0)[1]);
+		for (int row = 1; row < SummaryTable.getRowCount(); row++) {
+			SummaryTable.removeRow(row);
+		}
+			
+		for (int i = 0; i < data.size(); i++) {
+			int currentRow = i + 1;
+			SummaryTable.setText(currentRow, 0, data.get(0)[0]);
+			SummaryTable.setText(currentRow, 1, data.get(0)[1]);
+			SummaryTable.setText(currentRow, 2, data.get(0)[2]);
+		}
+		
+		txtName.setText("");
+		txtDescription.setText("");
+		txtAmount.setText("");
+		
 	}
 	
 
@@ -114,16 +126,13 @@ public class IouMasterListView extends Composite implements
 		AddIOUPanel.add(SummaryTable);
 		
 		Label lblName = new Label("Name");
-		SummaryTable.setWidget(0, 1, lblName);
+		SummaryTable.setWidget(0, 0, lblName);
 		
 		Label lblDescription = new Label("Description");
-		SummaryTable.setWidget(0, 2, lblDescription);
+		SummaryTable.setWidget(0, 1, lblDescription);
 		
-		Label lblAmount = new Label("Is Owed");
-		SummaryTable.setWidget(0, 3, lblAmount);
-		
-		Label lblOwesMe = new Label("Owes Me");
-		SummaryTable.setWidget(0, 4, lblOwesMe);
+		Label lblAmount = new Label("Amount");
+		SummaryTable.setWidget(0, 2, lblAmount);
 
 	}
 
