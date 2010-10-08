@@ -15,6 +15,7 @@ import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.user.datepicker.client.DateBox;
 import com.mobi.iou.client.IOUSummaryService;
 import com.mobi.iou.client.IOUSummaryServiceAsync;
 import com.mobi.iou.shared.SummaryDetails;
@@ -23,14 +24,11 @@ public class IouMasterListPresenter implements Presenter {
 
 	public interface Display {
 		HasClickHandlers getBtnAddIOU();
-
 		TextBox getTxtName();
-
 		TextBox getTxtDescription();
-
 		TextBox getTxtAmount();
-
-		ListBox cboLoan();
+		ListBox getCboLoan();
+		DateBox getDateItem();
 
 		void setData(List<String[]> data);
 
@@ -84,6 +82,10 @@ public class IouMasterListPresenter implements Presenter {
 	void addLineItem() {
 		
 		double amount = NumberFormat.getDecimalFormat().parse( display.getTxtAmount().getText());
+		if(display.getCboLoan().getSelectedIndex() == 0) {
+			amount = amount * -1;
+		}
+		
 		summaryRPCService.AddItemReturnSummary(display.getTxtName().getText(), display.getTxtDescription().getText(),amount, new AsyncCallback<ArrayList<SummaryDetails>>() {
 
 			@Override

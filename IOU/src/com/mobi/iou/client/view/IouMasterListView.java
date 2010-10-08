@@ -14,6 +14,9 @@ import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
 import com.google.gwt.user.client.ui.ListBox;
+import com.google.gwt.user.datepicker.client.DateBox;
+import com.google.gwt.user.datepicker.client.DateBox.DefaultFormat;
+import com.google.gwt.i18n.client.DateTimeFormat;
 
 public class IouMasterListView extends Composite implements
 		IouMasterListPresenter.Display {
@@ -24,6 +27,7 @@ public class IouMasterListView extends Composite implements
 	private TextBox txtAmount;
 	private FlexTable SummaryTable;
 	private ListBox cboLoan;
+	private DateBox dateItem;
 	
 	public HasClickHandlers getBtnAddIOU() {
 		return btnAddIOU;
@@ -43,8 +47,12 @@ public class IouMasterListView extends Composite implements
 		return txtAmount;
 	}
 	
-	public ListBox cboLoan() {
+	public ListBox getCboLoan() {
 		return cboLoan;
+	}
+	
+	public DateBox getDateItem() {
+		return dateItem;
 	}
 
 
@@ -102,7 +110,7 @@ public class IouMasterListView extends Composite implements
 		
 		txtAmount = new TextBox();
 		verticalPanel_4.add(txtAmount);
-		txtAmount.setWidth("90px");
+		txtAmount.setWidth("69px");
 		
 		VerticalPanel verticalPanel_3 = new VerticalPanel();
 		horizontalPanel.add(verticalPanel_3);
@@ -112,6 +120,17 @@ public class IouMasterListView extends Composite implements
 		
 		txtDescription = new TextBox();
 		verticalPanel_3.add(txtDescription);
+		
+		VerticalPanel verticalPanel = new VerticalPanel();
+		horizontalPanel.add(verticalPanel);
+		
+		Label lblDate = new Label("Date");
+		verticalPanel.add(lblDate);
+		
+		dateItem = new DateBox();
+		dateItem.setFormat(new DefaultFormat(DateTimeFormat.getMediumDateFormat()));
+		verticalPanel.add(dateItem);
+		dateItem.setWidth("94px");
 		
 		btnAddIOU = new Button("New button");
 		btnAddIOU.setText("Add IOU");

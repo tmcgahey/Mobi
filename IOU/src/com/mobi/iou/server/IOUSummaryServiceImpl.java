@@ -20,7 +20,7 @@ public class IOUSummaryServiceImpl extends RemoteServiceServlet implements IOUSu
 
 	public ArrayList<SummaryDetails> AddItemReturnSummary(String name,String description, double amount) {
 		
-		SummaryItemData newItem = new SummaryItemData(name,description,amount);
+		AccountLineItem newItem = new AccountLineItem(name,description,amount);
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
         try {
@@ -37,11 +37,11 @@ public class IOUSummaryServiceImpl extends RemoteServiceServlet implements IOUSu
 		ArrayList<SummaryDetails> summaryList = new ArrayList<SummaryDetails>();
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-	    String query = "select from " + SummaryItemData.class.getName();
-	    List<SummaryItemData> lineItems = (List<SummaryItemData>) pm.newQuery(query).execute();
+	    String query = "select from " + AccountLineItem.class.getName();
+	    List<AccountLineItem> lineItems = (List<AccountLineItem>) pm.newQuery(query).execute();
 	    
 	    if (!lineItems.isEmpty()) {
-	    	for (SummaryItemData li : lineItems) {
+	    	for (AccountLineItem li : lineItems) {
 	    		summaryList.add(new SummaryDetails(li.getName(), li.getDescription(), li.getAmount()));
 	    	}
 	    }

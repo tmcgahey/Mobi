@@ -8,7 +8,7 @@ import javax.jdo.annotations.PrimaryKey;
 import com.google.appengine.api.datastore.Key;
 
 @PersistenceCapable
-public class SummaryItemData {
+public class AccountLineItem {
 
 	@PrimaryKey
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
@@ -20,7 +20,7 @@ public class SummaryItemData {
 	
 	private double amount;
 		
-	public SummaryItemData(String name, String description, double amount) {
+	public AccountLineItem(String name, String description, double amount) {
 		this.name = name;
 		this.description = description;
 		this.amount = amount;
