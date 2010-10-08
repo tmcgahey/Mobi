@@ -13,16 +13,17 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.ListBox;
 
 public class IouMasterListView extends Composite implements
 		IouMasterListPresenter.Display {
 	
 	private Button btnAddIOU;
 	private TextBox txtName;
-	private TextBox txtEmail;
 	private TextBox txtDescription;
 	private TextBox txtAmount;
 	private FlexTable SummaryTable;
+	private ListBox cboLoan;
 	
 	public HasClickHandlers getBtnAddIOU() {
 		return btnAddIOU;
@@ -33,12 +34,6 @@ public class IouMasterListView extends Composite implements
 		return txtName;
 	}
 
-
-	public TextBox getTxtEmail() {
-		return txtEmail;
-	}
-
-
 	public TextBox getTxtDescription() {
 		return txtDescription;
 	}
@@ -46,6 +41,10 @@ public class IouMasterListView extends Composite implements
 
 	public TextBox getTxtAmount() {
 		return txtAmount;
+	}
+	
+	public ListBox cboLoan() {
+		return cboLoan;
 	}
 
 
@@ -57,9 +56,9 @@ public class IouMasterListView extends Composite implements
 			
 		for (int i = 0; i < data.size(); i++) {
 			int currentRow = i + 1;
-			SummaryTable.setText(currentRow, 0, data.get(0)[0]);
-			SummaryTable.setText(currentRow, 1, data.get(0)[1]);
-			SummaryTable.setText(currentRow, 2, data.get(0)[2]);
+			SummaryTable.setText(currentRow, 0, data.get(i)[0]);
+			SummaryTable.setText(currentRow, 1, data.get(i)[1]);
+			SummaryTable.setText(currentRow, 2, data.get(i)[2]);
 		}
 		
 		txtName.setText("");
@@ -88,23 +87,12 @@ public class IouMasterListView extends Composite implements
 		txtName = new TextBox();
 		verticalPanel_1.add(txtName);
 		
-		VerticalPanel verticalPanel_2 = new VerticalPanel();
-		horizontalPanel.add(verticalPanel_2);
-		
-		Label lblEmail = new Label("Email");
-		verticalPanel_2.add(lblEmail);
-		
-		txtEmail = new TextBox();
-		verticalPanel_2.add(txtEmail);
-		
-		VerticalPanel verticalPanel_3 = new VerticalPanel();
-		horizontalPanel.add(verticalPanel_3);
-		
-		Label lblDescription_1 = new Label("Description");
-		verticalPanel_3.add(lblDescription_1);
-		
-		txtDescription = new TextBox();
-		verticalPanel_3.add(txtDescription);
+		cboLoan = new ListBox();
+		cboLoan.addItem("loaned me");
+		cboLoan.addItem("owes me");
+		cboLoan.setName("cboLoan");
+		horizontalPanel.add(cboLoan);
+		horizontalPanel.setCellVerticalAlignment(cboLoan, HasVerticalAlignment.ALIGN_BOTTOM);
 		
 		VerticalPanel verticalPanel_4 = new VerticalPanel();
 		horizontalPanel.add(verticalPanel_4);
@@ -115,6 +103,15 @@ public class IouMasterListView extends Composite implements
 		txtAmount = new TextBox();
 		verticalPanel_4.add(txtAmount);
 		txtAmount.setWidth("90px");
+		
+		VerticalPanel verticalPanel_3 = new VerticalPanel();
+		horizontalPanel.add(verticalPanel_3);
+		
+		Label lblDescription_1 = new Label("Description");
+		verticalPanel_3.add(lblDescription_1);
+		
+		txtDescription = new TextBox();
+		verticalPanel_3.add(txtDescription);
 		
 		btnAddIOU = new Button("New button");
 		btnAddIOU.setText("Add IOU");

@@ -8,13 +8,15 @@ import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.shared.HandlerManager;
+import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
-import com.mobi.iou.client.IOUSummary;
-import com.mobi.iou.client.IOUSummaryAsync;
+import com.mobi.iou.client.IOUSummaryService;
+import com.mobi.iou.client.IOUSummaryServiceAsync;
 import com.mobi.iou.shared.SummaryDetails;
 
 public class IouMasterListPresenter implements Presenter {
@@ -24,11 +26,11 @@ public class IouMasterListPresenter implements Presenter {
 
 		TextBox getTxtName();
 
-		TextBox getTxtEmail();
-
 		TextBox getTxtDescription();
 
 		TextBox getTxtAmount();
+
+		ListBox cboLoan();
 
 		void setData(List<String[]> data);
 
@@ -38,11 +40,14 @@ public class IouMasterListPresenter implements Presenter {
 	@SuppressWarnings("unused")
 	private final HandlerManager eventBus;
 	private final Display display;
-	private final IOUSummaryAsync summaryRPCService = GWT.create(IOUSummary.class);
-	
+	private final IOUSummaryServiceAsync summaryRPCService = GWT
+			.create(IOUSummaryService.class);
+
 	public IouMasterListPresenter(HandlerManager eventBus, Display view) {
 		this.eventBus = eventBus;
 		this.display = view;
+
+		populateSummary();
 	}
 
 	public void bind() {
@@ -51,7 +56,7 @@ public class IouMasterListPresenter implements Presenter {
 
 			@Override
 			public void onClick(ClickEvent event) {
-				populateSummary();
+				addLineItem();
 			}
 		});
 
@@ -61,30 +66,55 @@ public class IouMasterListPresenter implements Presenter {
 
 		summaryRPCService.getSummaryDetails(new AsyncCallback<ArrayList<SummaryDetails>>() {
 
+					@Override
+					public void onFailure(Throwable caught) {
+						Window.alert("Error fetching summary details");
+					}
+
+					@Override
+					public void onSuccess(ArrayList<SummaryDetails> result) {
+
+						displaySummaryData(result);
+					}
+
+				});
+
+	}
+
+	void addLineItem() {
+		
+		double amount = NumberFormat.getDecimalFormat().parse( display.getTxtAmount().getText());
+		summaryRPCService.AddItemReturnSummary(display.getTxtName().getText(), display.getTxtDescription().getText(),amount, new AsyncCallback<ArrayList<SummaryDetails>>() {
+
 			@Override
 			public void onFailure(Throwable caught) {
-				Window.alert("Error fetching summary details");
+				Window.alert("Error adding line item");
+				
 			}
 
 			@Override
 			public void onSuccess(ArrayList<SummaryDetails> result) {
-				
-				List<String[]> tableData = new ArrayList<String[]>();
-				
-				for(int i = 0; i < result.size(); i++) {
-					String lineItem[] = new String[3];
-					lineItem[0] = result.get(i).getName();
-					lineItem[1] = result.get(i).getDescription();
-					lineItem[2] = String.valueOf( result.get(i).getAmount());
-					tableData.add(lineItem);
-				}
-				
-				display.setData(tableData);
+				displaySummaryData(result);
 				
 			}
-			
 		});
-				
+		
+	}
+	
+	private void displaySummaryData(ArrayList<SummaryDetails> summaryList) {
+		
+		List<String[]> tableData = new ArrayList<String[]>();
+
+		for (int i = 0; i < summaryList.size(); i++) {
+			String lineItem[] = new String[3];
+			lineItem[0] = summaryList.get(i).getName();
+			lineItem[1] = summaryList.get(i).getDescription();
+			lineItem[2] = String.valueOf(summaryList.get(i).getAmount());
+			tableData.add(lineItem);
+		}
+
+		display.setData(tableData);
+		
 	}
 	
 	@Override

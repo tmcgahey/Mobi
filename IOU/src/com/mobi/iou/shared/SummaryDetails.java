@@ -2,11 +2,19 @@ package com.mobi.iou.shared;
 
 import java.io.Serializable;
 
+
 @SuppressWarnings("serial")
 public class SummaryDetails implements Serializable {
+		
 	private String name;
+	
 	private String description;
+	
 	private double amount;
+	
+	public SummaryDetails() {
+		new SummaryDetails("","",0.0);
+	}
 	
 	public SummaryDetails(String name,String description, double amount) {
 		this.name = name;
