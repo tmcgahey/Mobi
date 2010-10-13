@@ -13,9 +13,11 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 
 	private final HandlerManager eventBus;
 	private HasWidgets container;
+	private final String logoutURL;
 
-	public AppController(HandlerManager eventBus) {
+	public AppController(HandlerManager eventBus,String logoutURL) {
 		this.eventBus = eventBus;
+		this.logoutURL = logoutURL;
 		bind();
 	}
 
@@ -45,7 +47,7 @@ public class AppController implements Presenter, ValueChangeHandler<String> {
 	      Presenter presenter = null;
 
 	      if (token.equals("list")) {
-	        presenter = new IouMasterListPresenter(eventBus, new IouMasterListView());
+	        presenter = new IouMasterListPresenter(eventBus,logoutURL, new IouMasterListView());
 	      }
 	      
 	      if (presenter != null) {

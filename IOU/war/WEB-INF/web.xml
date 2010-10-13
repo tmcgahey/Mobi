@@ -15,6 +15,16 @@
 		<servlet-name>iouSummaryServiceImpl</servlet-name>
 		<url-pattern>/iou/iouSummary</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>LoginServiceImpl</servlet-name>
+		<servlet-class>com.mobi.iou.server.LoginServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>LoginServiceImpl</servlet-name>
+		<url-pattern>/iou/login</url-pattern>
+	</servlet-mapping>
 
 	<!-- Default page to serve -->
 	<welcome-file-list>

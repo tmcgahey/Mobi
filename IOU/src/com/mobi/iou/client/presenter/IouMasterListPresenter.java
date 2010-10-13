@@ -29,7 +29,7 @@ public class IouMasterListPresenter implements Presenter {
 		TextBox getTxtAmount();
 		ListBox getCboLoan();
 		DateBox getDateItem();
-
+		void setSignOutLink(String signOutLink);
 		void setData(List<String[]> data);
 
 		Widget asWidget();
@@ -41,10 +41,10 @@ public class IouMasterListPresenter implements Presenter {
 	private final IOUSummaryServiceAsync summaryRPCService = GWT
 			.create(IOUSummaryService.class);
 
-	public IouMasterListPresenter(HandlerManager eventBus, Display view) {
+	public IouMasterListPresenter(HandlerManager eventBus,String logoutURL, Display view) {
 		this.eventBus = eventBus;
 		this.display = view;
-
+		display.setSignOutLink(logoutURL);
 		populateSummary();
 	}
 

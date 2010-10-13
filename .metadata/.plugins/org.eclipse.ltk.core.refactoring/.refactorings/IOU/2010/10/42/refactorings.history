@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private void addTransaction(String accountName, String description, double amount)&apos; from &apos;com.mobi.iou.server.IOUSummaryServiceImpl.AddItemReturnSummary()&apos; to &apos;com.mobi.iou.server.IOUSummaryServiceImpl&apos;&#x0D;&#x0A;- Original project: &apos;IOU&apos;&#x0D;&#x0A;- Method name: &apos;addTransaction&apos;&#x0D;&#x0A;- Destination type: &apos;com.mobi.iou.server.IOUSummaryServiceImpl&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;addTransaction&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;com.mobi.iou.server{IOUSummaryServiceImpl.java" name="addTransaction" replace="false" selection="622 250" stamp="1286936520555" version="1.0" visibility="2"/>
+</session>

@@ -1,0 +1,5 @@
+package com.mobi.iou.server;
+
+public class SummaryItemData {
+
+}

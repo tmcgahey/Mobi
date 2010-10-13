@@ -15,7 +15,7 @@ public class Account {
     private Key key;
 	
 	private String accountName;
-	private String userID;
+	private String accountOwnerID;
 	
 	
 	public Key getKey() {
@@ -30,12 +30,12 @@ public class Account {
 		this.accountName = accountName;
 	}
 
-	public String getUserID() {
-		return userID;
+	public String getaccountOwnerID() {
+		return accountOwnerID;
 	}
 
 	public void setUserID(String userID) {
-		this.userID = userID;
+		this.accountOwnerID = userID;
 	}
 
 	

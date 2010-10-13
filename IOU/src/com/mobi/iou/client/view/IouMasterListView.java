@@ -6,6 +6,7 @@ import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.Widget;
 import com.mobi.iou.client.presenter.IouMasterListPresenter;
+import com.google.gwt.user.client.ui.Anchor;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -17,6 +18,7 @@ import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.datepicker.client.DateBox;
 import com.google.gwt.user.datepicker.client.DateBox.DefaultFormat;
 import com.google.gwt.i18n.client.DateTimeFormat;
+import com.google.gwt.user.client.ui.HasHorizontalAlignment;
 
 public class IouMasterListView extends Composite implements
 		IouMasterListPresenter.Display {
@@ -28,7 +30,13 @@ public class IouMasterListView extends Composite implements
 	private FlexTable SummaryTable;
 	private ListBox cboLoan;
 	private DateBox dateItem;
-	
+	private Anchor signOutLink = new Anchor("Sign Out");
+
+	public void setSignOutLink(String signOutLink) {
+		this.signOutLink.setHref(signOutLink);
+	}
+
+
 	public HasClickHandlers getBtnAddIOU() {
 		return btnAddIOU;
 	}
@@ -81,6 +89,12 @@ public class IouMasterListView extends Composite implements
 		VerticalPanel AddIOUPanel = new VerticalPanel();
 		initWidget(AddIOUPanel);
 		AddIOUPanel.setWidth("664px");
+		
+		HorizontalPanel linkPanel = new HorizontalPanel();
+		linkPanel.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_RIGHT);
+		AddIOUPanel.add(linkPanel);
+		linkPanel.setWidth("706px");
+		linkPanel.add(signOutLink);
 		
 		HorizontalPanel horizontalPanel = new HorizontalPanel();
 		AddIOUPanel.add(horizontalPanel);

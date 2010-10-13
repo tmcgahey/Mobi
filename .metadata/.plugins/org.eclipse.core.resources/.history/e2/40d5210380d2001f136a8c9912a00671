@@ -1,0 +1,33 @@
+package com.mobi.iou.server;
+
+import java.util.ArrayList;
+
+import javax.jdo.PersistenceManager;
+
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.mobi.iou.client.IOUSummaryService;
+import com.mobi.iou.shared.SummaryDetails;
+
+@SuppressWarnings("serial")
+public class IOUSummaryServiceImpl extends RemoteServiceServlet implements IOUSummaryService {
+
+	@Override
+	public ArrayList<SummaryDetails> getSummaryDetails() {
+		
+		ArrayList<SummaryDetails> summaryList = new ArrayList<SummaryDetails>();
+		summaryList.add(new SummaryDetails("test1", "test 1 desc", 33.21));
+		summaryList.add(new SummaryDetails("test2", "test 2 desc", 33.21));
+		
+		return summaryList;
+	}
+
+	public ArrayList<SummaryDetails> AddItemReturnSummary(String name,String description, double amount) {
+		
+		PersistenceManager pm = PMF.get().getPersistenceManager();
+        try {
+            pm.makePersistent(SummaryItemData);
+        } finally {
+            pm.close();
+        }
+	}
+}

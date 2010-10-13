@@ -1,0 +1,66 @@
+package com.mobi.iou.shared;
+
+import java.io.Serializable;
+
+import com.google.appengine.api.datastore.Key;
+
+import javax.jdo.annotations.IdGeneratorStrategy;
+import javax.jdo.annotations.PersistenceCapable;
+import javax.jdo.annotations.Persistent;
+import javax.jdo.annotations.PrimaryKey;
+import javax.persistence.Transient;
+
+@SuppressWarnings("serial")
+@PersistenceCapable
+public class SummaryDetails implements Serializable {
+		
+	@PrimaryKey
+    @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
+    @Transient
+    private Key key;
+	 
+	@Persistent
+	private String name;
+	
+	@Persistent
+	private String description;
+	
+	@Persistent
+	private double amount;
+	
+	public SummaryDetails() {
+		new SummaryDetails("","",0.0);
+	}
+	
+	public SummaryDetails(String name,String description, double amount) {
+		this.name = name;
+		this.description = description;
+		this.amount = amount;
+	}
+	
+	public Key getKey() {
+        return key;
+    }
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public double getAmount() {
+		return amount;
+	}
+	public void setAmount(double amount) {
+		this.amount = amount;
+	}
+	
+	
+
+}
