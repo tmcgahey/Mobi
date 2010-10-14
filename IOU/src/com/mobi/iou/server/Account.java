@@ -1,5 +1,8 @@
 package com.mobi.iou.server;
 
+import java.util.Date;
+import java.util.List;
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -17,6 +20,13 @@ public class Account {
 	private String accountName;
 	private String accountOwnerID;
 	
+	@Persistent(mappedBy = "account")
+	private List<AccountLineItem> lineItems;
+	
+	public Account(String accountName, String accountOwnerID) {
+		this.accountName = accountName;
+		this.accountOwnerID = accountOwnerID;
+	}
 	
 	public Key getKey() {
         return key;
@@ -30,12 +40,21 @@ public class Account {
 		this.accountName = accountName;
 	}
 
-	public String getaccountOwnerID() {
+	public String getAccountOwnerID() {
 		return accountOwnerID;
 	}
 
-	public void setUserID(String userID) {
+	public void setAccountOwnerID(String userID) {
 		this.accountOwnerID = userID;
+	}
+	
+	public List<AccountLineItem> getLineItems() {
+		return lineItems;
+	}
+	
+	public void addLineItem(String description,double amount, Date transactionDate ) {
+		AccountLineItem lineItem = new AccountLineItem(description, amount,transactionDate);
+		lineItems.add(lineItem);
 	}
 
 	

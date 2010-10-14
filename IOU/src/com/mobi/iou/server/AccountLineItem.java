@@ -1,5 +1,7 @@
 package com.mobi.iou.server;
 
+import java.util.Date;
+
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -14,28 +16,21 @@ public class AccountLineItem {
     @Persistent(valueStrategy = IdGeneratorStrategy.IDENTITY)
     private Key key;
 	
-	private String name;
-	
 	private String description;
-	
 	private double amount;
-		
-	public AccountLineItem(String name, String description, double amount) {
-		this.name = name;
+	private Date transactionDate;
+	private Account account;
+	
+	public AccountLineItem(String description, double amount,Date transactionDate) {
 		this.description = description;
 		this.amount = amount;
+		this.transactionDate = transactionDate;
 	}
 	
 	public Key getKey() {
         return key;
     }
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
 	public String getDescription() {
 		return description;
 	}
@@ -47,5 +42,21 @@ public class AccountLineItem {
 	}
 	public void setAmount(double amount) {
 		this.amount = amount;
+	}
+
+	public void setTransactionDate(Date transactionDate) {
+		this.transactionDate = transactionDate;
+	}
+
+	public Date getTransactionDate() {
+		return transactionDate;
+	}
+
+	public void setAccount(Account account){
+		this.account = account;
+	}
+	
+	public Account getAccount() {
+		return account;
 	}
 }

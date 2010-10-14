@@ -193,3 +193,44 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.
 
 !ENTRY com.instantiations.eclipse 1 0 2010-10-12 21:39:57.718
 !MESSAGE Failed to determine version of plugin com.windowtester.runtime
+!SESSION 2010-10-13 19:31:07.024 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_19
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY com.instantiations.eclipse 1 0 2010-10-13 19:31:34.048
+!MESSAGE Failed to determine version of plugin com.instantiations.eclipse.application.audit
+
+!ENTRY com.instantiations.eclipse 1 0 2010-10-13 19:31:34.063
+!MESSAGE Failed to determine version of plugin com.instantiations.profiler.ui
+
+!ENTRY com.instantiations.eclipse 1 0 2010-10-13 19:31:34.063
+!MESSAGE Failed to determine version of plugin com.windowtester.runtime
+
+!ENTRY com.instantiations.eclipse 1 0 2010-10-13 19:31:34.063
+!MESSAGE Failed to determine version of plugin com.windowtester.runtime
+!SESSION 2010-10-13 21:09:45.771 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_19
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2010-10-13 21:09:48.657
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.instantiations.eclipse 1 0 2010-10-13 21:10:11.764
+!MESSAGE Failed to determine version of plugin com.instantiations.eclipse.application.audit
+
+!ENTRY com.instantiations.eclipse 1 0 2010-10-13 21:10:11.769
+!MESSAGE Failed to determine version of plugin com.instantiations.profiler.ui
+
+!ENTRY com.instantiations.eclipse 1 0 2010-10-13 21:10:11.771
+!MESSAGE Failed to determine version of plugin com.windowtester.runtime
+
+!ENTRY com.instantiations.eclipse 1 0 2010-10-13 21:10:11.773
+!MESSAGE Failed to determine version of plugin com.windowtester.runtime

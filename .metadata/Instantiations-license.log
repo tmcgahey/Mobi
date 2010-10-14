@@ -1,4 +1,4 @@
-<installation datetime="201010122139">
+<installation datetime="201010132110">
    <serialNumbers>
       <serialNumber>CodeProServer-00000-0000</serialNumber>
       <serialNumber>Profiler-00000-0000</serialNumber>
@@ -7,11 +7,11 @@
       <serialNumber>WindowTesterPro-00000-0000</serialNumber>
    </serialNumbers>
    <activationKeys>
-      <activationKey>CodeProServer-CD0VB-QM0KZ-P8J73</activationKey>
-      <activationKey>Profiler-CD0VB-QM11X-KWJ1S</activationKey>
-      <activationKey>RCPDeveloper-CD0VB-QM0A2-9SK0K</activationKey>
-      <activationKey>WindowBuilderPro-CD0VK-QM1K7-XACYB</activationKey>
-      <activationKey>WindowTesterPro-CD0VB-QM0T4-BBSPE</activationKey>
+      <activationKey>CodeProServer-DD0VB-QM0GG-R2FT6</activationKey>
+      <activationKey>Profiler-DD0VB-QM103-DYS3K</activationKey>
+      <activationKey>RCPDeveloper-DD0VB-QM12S-7MHNM</activationKey>
+      <activationKey>WindowBuilderPro-DD0VK-QM0RC-C0W5G</activationKey>
+      <activationKey>WindowTesterPro-DD0VB-QM0C6-JPFTZ</activationKey>
    </activationKeys>
    <products>
       <product name="Code Coverage"                installed="false" fullyEnabled="false" build="UNKNOWN" />

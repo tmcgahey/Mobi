@@ -94,3 +94,25 @@
 21:39:33,916 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
 22:48:53,330 DEBUG [J] Bundle [net.rim.ejde] is changing state to Stopping.
 22:48:53,330 DEBUG [G] Property change listener is disabled.
+19:31:11,096 TRACE [K] ContextManager starting
+19:31:11,111 DEBUG [G] Property change listener is enabled.
+19:31:11,142 DEBUG [E] Starting Search for CPs
+19:31:11,158 DEBUG [E] CP named BlackBerry Java SDK version 4.7.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack4.7.0_4.7.0.57\components
+19:31:11,158 DEBUG [E] CP named BlackBerry Java SDK version 5.0.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack5.0.0_5.0.0.25\components
+19:31:11,174 DEBUG [C] VM: *ADDED* [BlackBerry JRE 5.0.0$BlackBerry JRE 5.0.0]
+19:31:11,174 DEBUG [C] VM: *ADDED* [BlackBerry JRE 4.7.0$BlackBerry JRE 4.7.0]
+19:31:11,174 DEBUG [C] VM: *ADDED* [1286078441185$jdk1.6.0_19]
+19:31:11,205 INFO  [J] # of BB VMs Found: 2
+19:31:11,205 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
+21:09:49,374 TRACE [K] ContextManager starting
+21:09:49,374 DEBUG [G] Property change listener is enabled.
+21:09:49,452 DEBUG [E] Starting Search for CPs
+21:09:49,452 DEBUG [E] CP named BlackBerry Java SDK version 4.7.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack4.7.0_4.7.0.57\components
+21:09:49,452 DEBUG [E] CP named BlackBerry Java SDK version 5.0.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack5.0.0_5.0.0.25\components
+21:09:49,484 DEBUG [C] VM: *ADDED* [BlackBerry JRE 5.0.0$BlackBerry JRE 5.0.0]
+21:09:49,484 DEBUG [C] VM: *ADDED* [BlackBerry JRE 4.7.0$BlackBerry JRE 4.7.0]
+21:09:49,484 DEBUG [C] VM: *ADDED* [1286078441185$jdk1.6.0_19]
+21:09:49,499 INFO  [J] # of BB VMs Found: 2
+21:09:49,499 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
+07:44:21,867 DEBUG [J] Bundle [net.rim.ejde] is changing state to Stopping.
+07:44:21,867 DEBUG [G] Property change listener is disabled.

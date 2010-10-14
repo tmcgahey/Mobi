@@ -1,4 +1,10 @@
-<!-- Indices written at Wed, 13 Oct 2010 02:00:56 UTC -->
+<!-- Indices written at Thu, 14 Oct 2010 02:03:58 UTC -->
 
-<datastore-indexes/>
+<datastore-indexes>
 
+    <!-- Used 1 time in query history -->
+    <datastore-index kind="AccountLineItem" ancestor="true" source="auto">
+        <property name="lineItems_INTEGER_IDX" direction="asc"/>
+    </datastore-index>
+
+</datastore-indexes>

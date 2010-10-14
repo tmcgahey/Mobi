@@ -86,7 +86,7 @@ public class IouMasterListPresenter implements Presenter {
 			amount = amount * -1;
 		}
 		
-		summaryRPCService.AddItemReturnSummary(display.getTxtName().getText(), display.getTxtDescription().getText(),amount, new AsyncCallback<ArrayList<SummaryDetails>>() {
+		summaryRPCService.AddItemReturnSummary(display.getTxtName().getText(), display.getTxtDescription().getText(),amount,display.getDateItem().getValue(), new AsyncCallback<ArrayList<SummaryDetails>>() {
 
 			@Override
 			public void onFailure(Throwable caught) {

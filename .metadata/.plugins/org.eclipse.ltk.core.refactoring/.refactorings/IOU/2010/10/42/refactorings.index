@@ -1,1 +1,3 @@
 1286936520555	Extract method 'addTransaction'
+1287019473401	Encapsulate field 'transactionDate'
+1287019759711	Encapsulate field 'account'

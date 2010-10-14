@@ -32,7 +32,6 @@
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.mobi.iou.shared.SummaryDetails"/>
 <fullyQualifiedTypeName name="com.mobi.iou.server.SummaryItemData"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="com.google.appengine.api.users.UserService"/>
 <fullyQualifiedTypeName name="com.google.appengine.api.users.UserServiceFactory"/>
 <fullyQualifiedTypeName name="com.google.appengine.api.users.User"/>
@@ -45,4 +44,9 @@
 <fullyQualifiedTypeName name="com.google.gwt.user.client.ui.Anchor"/>
 <fullyQualifiedTypeName name="com.google.appengine.api.datastore.Query"/>
 <fullyQualifiedTypeName name="javax.jdo.Query"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="com.google.appengine.api.datastore.Transaction"/>
+<fullyQualifiedTypeName name="javax.jdo.Transaction"/>
+<fullyQualifiedTypeName name="com.mobi.iou.server.AccountLineItem"/>
 </qualifiedTypeNameHistroy>
