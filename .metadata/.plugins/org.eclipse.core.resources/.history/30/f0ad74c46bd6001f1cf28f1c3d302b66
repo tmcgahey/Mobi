@@ -1,0 +1,16 @@
+package com.mobi.iou.server;
+
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+import com.mobi.iou.client.LoginService;
+import com.mobi.iou.shared.LoginInfo;
+
+public class LoginServiceImpl extends RemoteServiceServlet implements
+		LoginService {
+
+	@Override
+	public LoginInfo login(String requestUri) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

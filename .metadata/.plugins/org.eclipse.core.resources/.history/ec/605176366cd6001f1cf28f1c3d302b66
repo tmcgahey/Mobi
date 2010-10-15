@@ -1,0 +1,9 @@
+package com.mobi.iou.client;
+
+import com.google.gwt.user.client.rpc.RemoteService;
+import com.mobi.iou.shared.LoginInfo;
+
+public interface LoginService extends RemoteService {
+
+	public LoginInfo login(String requestUri);
+}
