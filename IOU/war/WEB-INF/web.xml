@@ -6,7 +6,7 @@
 <web-app>
 
 	<!-- Servlets -->
-	<servlet>
+	<!--<servlet>
 		<servlet-name>iouSummaryServiceImpl</servlet-name>
 		<servlet-class>com.mobi.iou.server.IOUSummaryServiceImpl</servlet-class>
 	</servlet>
@@ -26,6 +26,21 @@
 		<url-pattern>/iou/login</url-pattern>
 	</servlet-mapping>
 
+	-->
+	<servlet>
+		<servlet-name>IOUServlet</servlet-name>
+		<servlet-class>org.restlet.ext.servlet.ServerServlet</servlet-class>
+		<init-param>
+			<param-name>org.restlet.application</param-name>
+			<param-value>com.mobi.iou.server.IOUApplication</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>IOUServlet</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+	
 	<!-- Default page to serve -->
 	<welcome-file-list>
 		<welcome-file>IOU.html</welcome-file>

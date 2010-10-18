@@ -1,4 +1,4 @@
-#Thu Oct 14 07:44:21 EDT 2010
+#Sun Oct 17 21:41:31 EDT 2010
 content_assist_proposals_foreground=0,0,0
 spelling_locale_initialized=true
 content_assist_disabled_computers=org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000
@@ -17,5 +17,5 @@ org.eclipse.jdt.ui.formatterprofiles.version=11
 content_assist_number_of_computers=19
 useQuickDiffPrefPage=true
 org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
-content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.mobi.iou.client.presenter.Presenter"><rhs name\="com.mobi.iou.client.presenter.IouMasterListPresenter"/></lhs><lhs name\="com.mobi.iou.client.presenter.IouMasterListPresenter$Display"><rhs name\="com.mobi.iou.client.view.IouMasterListView"/></lhs><lhs name\="com.mobi.iou.server.SummaryItemData"><rhs name\="com.mobi.iou.server.SummaryItemData"/></lhs><lhs name\="com.mobi.iou.server.AccountLineItem"><rhs name\="com.mobi.iou.server.AccountLineItem"/></lhs></history>
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="com.mobi.iou.client.presenter.Presenter"><rhs name\="com.mobi.iou.client.presenter.IouMasterListPresenter"/></lhs><lhs name\="com.mobi.iou.client.presenter.IouMasterListPresenter$Display"><rhs name\="com.mobi.iou.client.view.IouMasterListView"/></lhs><lhs name\="com.mobi.iou.server.SummaryItemData"><rhs name\="com.mobi.iou.server.SummaryItemData"/></lhs><lhs name\="com.mobi.iou.server.AccountLineItem"><rhs name\="com.mobi.iou.server.AccountLineItem"/></lhs><lhs name\="com.google.gwt.http.client.RequestBuilder"><rhs name\="com.google.gwt.http.client.RequestBuilder"/></lhs></history>
 org.eclipse.jdt.ui.text.code_templates_migrated=true

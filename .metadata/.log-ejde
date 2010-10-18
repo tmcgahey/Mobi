@@ -116,3 +116,75 @@
 21:09:49,499 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
 07:44:21,867 DEBUG [J] Bundle [net.rim.ejde] is changing state to Stopping.
 07:44:21,867 DEBUG [G] Property change listener is disabled.
+16:07:46,168 TRACE [K] ContextManager starting
+16:07:46,172 DEBUG [G] Property change listener is enabled.
+16:07:46,215 DEBUG [E] Starting Search for CPs
+16:07:46,223 DEBUG [E] CP named BlackBerry Java SDK version 4.7.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack4.7.0_4.7.0.57\components
+16:07:46,225 DEBUG [E] CP named BlackBerry Java SDK version 5.0.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack5.0.0_5.0.0.25\components
+16:07:46,264 DEBUG [C] VM: *ADDED* [1286078441185$jdk1.6.0_19]
+16:07:46,264 DEBUG [C] VM: *ADDED* [BlackBerry JRE 5.0.0$BlackBerry JRE 5.0.0]
+16:07:46,267 DEBUG [C] VM: *ADDED* [BlackBerry JRE 4.7.0$BlackBerry JRE 4.7.0]
+16:07:46,362 INFO  [J] # of BB VMs Found: 2
+16:07:46,363 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
+16:14:18,667 DEBUG [J] Bundle [net.rim.ejde] is changing state to Stopping.
+16:14:18,667 DEBUG [G] Property change listener is disabled.
+16:14:25,788 TRACE [K] ContextManager starting
+16:14:25,808 DEBUG [G] Property change listener is enabled.
+16:14:25,850 DEBUG [E] Starting Search for CPs
+16:14:25,856 DEBUG [E] CP named BlackBerry Java SDK version 4.7.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack4.7.0_4.7.0.57\components
+16:14:25,857 DEBUG [E] CP named BlackBerry Java SDK version 5.0.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack5.0.0_5.0.0.25\components
+16:14:25,882 DEBUG [C] VM: *ADDED* [BlackBerry JRE 5.0.0$BlackBerry JRE 5.0.0]
+16:14:25,882 DEBUG [C] VM: *ADDED* [BlackBerry JRE 4.7.0$BlackBerry JRE 4.7.0]
+16:14:25,883 DEBUG [C] VM: *ADDED* [1286078441185$jdk1.6.0_19]
+16:14:25,953 INFO  [J] # of BB VMs Found: 2
+16:14:25,954 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
+16:19:16,166 DEBUG [J] Bundle [net.rim.ejde] is changing state to Stopping.
+16:19:16,166 DEBUG [G] Property change listener is disabled.
+16:27:36,071 TRACE [K] ContextManager starting
+16:27:36,074 DEBUG [G] Property change listener is enabled.
+16:27:36,115 DEBUG [E] Starting Search for CPs
+16:27:36,121 DEBUG [E] CP named BlackBerry Java SDK version 4.7.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack4.7.0_4.7.0.57\components
+16:27:36,122 DEBUG [E] CP named BlackBerry Java SDK version 5.0.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack5.0.0_5.0.0.25\components
+16:27:36,148 DEBUG [C] VM: *ADDED* [1286078441185$jdk1.6.0_19]
+16:27:36,148 DEBUG [C] VM: *ADDED* [BlackBerry JRE 5.0.0$BlackBerry JRE 5.0.0]
+16:27:36,149 DEBUG [C] VM: *ADDED* [BlackBerry JRE 4.7.0$BlackBerry JRE 4.7.0]
+16:27:36,238 INFO  [J] # of BB VMs Found: 2
+16:27:36,238 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
+16:55:36,988 TRACE [F] Entered classPathChanged(); project: IOU
+16:55:36,988 TRACE [F] Entered checkProjectOptions(); project: IOU
+18:30:23,995 DEBUG [J] Bundle [net.rim.ejde] is changing state to Stopping.
+18:30:23,995 DEBUG [G] Property change listener is disabled.
+18:30:33,548 TRACE [K] ContextManager starting
+18:30:33,548 DEBUG [G] Property change listener is enabled.
+18:30:33,594 DEBUG [E] Starting Search for CPs
+18:30:33,610 DEBUG [E] CP named BlackBerry Java SDK version 4.7.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack4.7.0_4.7.0.57\components
+18:30:33,610 DEBUG [E] CP named BlackBerry Java SDK version 5.0.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack5.0.0_5.0.0.25\components
+18:30:33,626 DEBUG [C] VM: *ADDED* [BlackBerry JRE 5.0.0$BlackBerry JRE 5.0.0]
+18:30:33,626 DEBUG [C] VM: *ADDED* [BlackBerry JRE 4.7.0$BlackBerry JRE 4.7.0]
+18:30:33,626 DEBUG [C] VM: *ADDED* [1286078441185$jdk1.6.0_19]
+18:30:33,704 INFO  [J] # of BB VMs Found: 2
+18:30:33,704 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
+18:39:11,497 TRACE [K] ContextManager starting
+18:39:11,497 DEBUG [G] Property change listener is enabled.
+18:39:11,529 DEBUG [E] Starting Search for CPs
+18:39:11,529 DEBUG [E] CP named BlackBerry Java SDK version 4.7.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack4.7.0_4.7.0.57\components
+18:39:11,529 DEBUG [E] CP named BlackBerry Java SDK version 5.0.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack5.0.0_5.0.0.25\components
+18:39:11,560 DEBUG [C] VM: *ADDED* [BlackBerry JRE 5.0.0$BlackBerry JRE 5.0.0]
+18:39:11,560 DEBUG [C] VM: *ADDED* [BlackBerry JRE 4.7.0$BlackBerry JRE 4.7.0]
+18:39:11,560 DEBUG [C] VM: *ADDED* [1286078441185$jdk1.6.0_19]
+18:39:11,575 INFO  [J] # of BB VMs Found: 2
+18:39:11,575 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
+18:53:52,457 DEBUG [J] Bundle [net.rim.ejde] is changing state to Stopping.
+18:53:52,457 DEBUG [G] Property change listener is disabled.
+19:05:52,079 TRACE [K] ContextManager starting
+19:05:52,079 DEBUG [G] Property change listener is enabled.
+19:05:52,126 DEBUG [E] Starting Search for CPs
+19:05:52,126 DEBUG [E] CP named BlackBerry Java SDK version 4.7.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack4.7.0_4.7.0.57\components
+19:05:52,126 DEBUG [E] CP named BlackBerry Java SDK version 5.0.0 was found at D:\Travis\Education\eclipse-java-galileo-SR2-win32\eclipse\plugins\net.rim.ejde.componentpack5.0.0_5.0.0.25\components
+19:05:52,157 DEBUG [C] VM: *ADDED* [1286078441185$jdk1.6.0_19]
+19:05:52,157 DEBUG [C] VM: *ADDED* [BlackBerry JRE 5.0.0$BlackBerry JRE 5.0.0]
+19:05:52,157 DEBUG [C] VM: *ADDED* [BlackBerry JRE 4.7.0$BlackBerry JRE 4.7.0]
+19:05:52,282 INFO  [J] # of BB VMs Found: 2
+19:05:52,297 DEBUG [J] Bundle [net.rim.ejde] is changing state to Started.
+21:41:31,826 DEBUG [J] Bundle [net.rim.ejde] is changing state to Stopping.
+21:41:31,826 DEBUG [G] Property change listener is disabled.

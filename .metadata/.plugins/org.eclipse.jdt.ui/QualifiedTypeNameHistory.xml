@@ -49,4 +49,8 @@
 <fullyQualifiedTypeName name="com.google.appengine.api.datastore.Transaction"/>
 <fullyQualifiedTypeName name="javax.jdo.Transaction"/>
 <fullyQualifiedTypeName name="com.mobi.iou.server.AccountLineItem"/>
+<fullyQualifiedTypeName name="com.google.gwt.http.client.URL"/>
+<fullyQualifiedTypeName name="org.restlet.routing.TemplateRoute"/>
+<fullyQualifiedTypeName name="org.restlet.routing.Template"/>
+<fullyQualifiedTypeName name="com.google.gwt.http.client.RequestBuilder"/>
 </qualifiedTypeNameHistroy>

@@ -1,9 +1,7 @@
-package com.mobi.iou.shared;
+package com.mobi.iou.server.login;
 
-import java.io.Serializable;
 
-@SuppressWarnings("serial")
-public class LoginInfo implements Serializable {
+public class LoginInfo {
 
 	private boolean loggedIn = false;
 	private String loginUrl;
