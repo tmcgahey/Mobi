@@ -27,6 +27,7 @@ public class IOUApplication extends Application {
 		router.setDefaultMatchingMode(Template.MODE_STARTS_WITH);
 		
 		router.attach("/iou/login", LoginResource.class);
+		router.attach("/iou/summary", AccountSummaryResource.class);
 
  
         return router;

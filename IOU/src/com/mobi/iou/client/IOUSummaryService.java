@@ -5,7 +5,7 @@ import java.util.Date;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-import com.mobi.iou.shared.SummaryDetails;
+import com.mobi.iou.server.SummaryDetails;
 
 @RemoteServiceRelativePath("iouSummary")
 public interface IOUSummaryService extends RemoteService {

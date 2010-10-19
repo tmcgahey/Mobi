@@ -70,28 +70,6 @@ public class IOU implements EntryPoint {
 	      Window.alert("Couldn't retrieve JSON");
 	    }
 	    
-	   /* LoginServiceAsync loginService = GWT.create(LoginService.class);
-	    loginService.login(GWT.getHostPageBaseURL(), new AsyncCallback<LoginInfo>() {
-
-			@Override
-			public void onFailure(Throwable caught) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void onSuccess(LoginInfo result) {
-				loginInfo = result;
-				if(loginInfo.isLoggedIn()) {
-					HandlerManager eventBus = new HandlerManager(null);
-					AppController appViewer = new AppController(eventBus,loginInfo.getLogoutUrl());
-					appViewer.go(RootPanel.get());
-				} else {
-					loadLogin();
-				}			
-			}
-	    	
-	    });*/
 	}
 	
 	private final native JsArray<LoginJSON> loginJSONArray(String json) /*-{

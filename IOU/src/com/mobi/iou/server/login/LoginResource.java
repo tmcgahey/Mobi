@@ -13,7 +13,7 @@ import com.google.appengine.repackaged.org.json.JSONObject;
 public class LoginResource extends ServerResource {
 
 	@Get
-	public String login(String requestUri) {
+	public String login() {
 		UserService userService = UserServiceFactory.getUserService();
 		User user = userService.getCurrentUser();
 		LoginInfo loginInfo = new LoginInfo();

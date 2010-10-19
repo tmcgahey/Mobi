@@ -1,10 +1,7 @@
-package com.mobi.iou.shared;
-
-import java.io.Serializable;
+package com.mobi.iou.server;
 
 
-@SuppressWarnings("serial")
-public class SummaryDetails implements Serializable {
+public class SummaryDetails {
 		
 	private String name;
 	

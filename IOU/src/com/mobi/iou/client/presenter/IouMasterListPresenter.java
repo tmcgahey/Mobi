@@ -4,10 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.core.client.JsArray;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.event.shared.HandlerManager;
+import com.google.gwt.http.client.Request;
+import com.google.gwt.http.client.RequestBuilder;
+import com.google.gwt.http.client.RequestCallback;
+import com.google.gwt.http.client.RequestException;
+import com.google.gwt.http.client.Response;
+import com.google.gwt.http.client.URL;
 import com.google.gwt.i18n.client.NumberFormat;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
@@ -18,7 +25,8 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.user.datepicker.client.DateBox;
 import com.mobi.iou.client.IOUSummaryService;
 import com.mobi.iou.client.IOUSummaryServiceAsync;
-import com.mobi.iou.shared.SummaryDetails;
+import com.mobi.iou.client.SummaryDetailsJSON;
+import com.mobi.iou.server.SummaryDetails;
 
 public class IouMasterListPresenter implements Presenter {
 
@@ -62,22 +70,39 @@ public class IouMasterListPresenter implements Presenter {
 
 	void populateSummary() {
 
-		summaryRPCService.getSummaryDetails(new AsyncCallback<ArrayList<SummaryDetails>>() {
+		String url = GWT.getModuleBaseURL() + "summary";
+		url = URL.encode(url);
 
-					@Override
-					public void onFailure(Throwable caught) {
-						Window.alert("Error fetching summary details");
-					}
+	    RequestBuilder summaryRequest = new RequestBuilder(RequestBuilder.GET, url);
+	    
+	    try {
+		      @SuppressWarnings("unused")
+			Request request = summaryRequest.sendRequest(null, new RequestCallback() {
+		        public void onError(Request request, Throwable exception) {
+		          Window.alert("Couldn't retrieve JSON");
+		        }
 
-					@Override
-					public void onSuccess(ArrayList<SummaryDetails> result) {
-
-						displaySummaryData(result);
-					}
-
-				});
+		        public void onResponseReceived(Request request, Response response) {
+		          if (200 == response.getStatusCode()) {
+		        	  JsArray<SummaryDetailsJSON> summaryDetails = ConvertAccountSummaryJSONArray(response.getText());
+		        	  displaySummaryData(summaryDetails);
+		        	  
+		          } else {
+		            Window.alert("Couldn't retrieve JSON (" + response.getStatusText()
+			                + ")");
+		          }
+		        }
+		      });
+	    } catch (RequestException e) {
+	      Window.alert("Couldn't retrieve JSON");
+	    }
 
 	}
+	
+	private final native JsArray<SummaryDetailsJSON> ConvertAccountSummaryJSONArray(String json) /*-{
+		return eval(json);
+	}-*/;
+	
 
 	void addLineItem() {
 		
@@ -96,18 +121,18 @@ public class IouMasterListPresenter implements Presenter {
 
 			@Override
 			public void onSuccess(ArrayList<SummaryDetails> result) {
-				displaySummaryData(result);
+				//displaySummaryData(result);
 				
 			}
 		});
 		
 	}
 	
-	private void displaySummaryData(ArrayList<SummaryDetails> summaryList) {
+	private void displaySummaryData(JsArray<SummaryDetailsJSON> summaryList) {
 		
 		List<String[]> tableData = new ArrayList<String[]>();
 
-		for (int i = 0; i < summaryList.size(); i++) {
+		for (int i = 0; i < summaryList.length(); i++) {
 			String lineItem[] = new String[3];
 			lineItem[0] = summaryList.get(i).getName();
 			lineItem[1] = summaryList.get(i).getDescription();

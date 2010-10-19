@@ -13,7 +13,6 @@ import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.mobi.iou.client.IOUSummaryService;
-import com.mobi.iou.shared.SummaryDetails;
 
 @SuppressWarnings("serial")
 public class IOUSummaryServiceImpl extends RemoteServiceServlet implements IOUSummaryService {
