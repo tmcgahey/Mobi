@@ -1,7 +1,0 @@
-package com.mobi.iou.shared;
-
-import java.io.Serializable;
-
-public class LoginInfo implements Serializable {
-
-}
