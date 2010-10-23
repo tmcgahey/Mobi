@@ -5,12 +5,12 @@ import java.util.Date;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-import com.mobi.iou.server.SummaryDetails;
+//import com.mobi.iou.server.SummaryDetails;
 
 @RemoteServiceRelativePath("iouSummary")
 public interface IOUSummaryService extends RemoteService {
 	
-	ArrayList<SummaryDetails> getSummaryDetails();
-	ArrayList<SummaryDetails> AddItemReturnSummary(String name,String description, double amount,Date transactionDate); 
+	//ArrayList<SummaryDetails> getSummaryDetails();
+	//ArrayList<SummaryDetails> AddItemReturnSummary(String name,String description, double amount,Date transactionDate); 
 
 }

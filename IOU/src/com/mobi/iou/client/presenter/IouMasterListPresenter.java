@@ -26,7 +26,7 @@ import com.google.gwt.user.datepicker.client.DateBox;
 import com.mobi.iou.client.IOUSummaryService;
 import com.mobi.iou.client.IOUSummaryServiceAsync;
 import com.mobi.iou.client.SummaryDetailsJSON;
-import com.mobi.iou.server.SummaryDetails;
+//import com.mobi.iou.server.SummaryDetails;
 
 public class IouMasterListPresenter implements Presenter {
 
@@ -111,7 +111,7 @@ public class IouMasterListPresenter implements Presenter {
 			amount = amount * -1;
 		}
 		
-		summaryRPCService.AddItemReturnSummary(display.getTxtName().getText(), display.getTxtDescription().getText(),amount,display.getDateItem().getValue(), new AsyncCallback<ArrayList<SummaryDetails>>() {
+		/*summaryRPCService.AddItemReturnSummary(display.getTxtName().getText(), display.getTxtDescription().getText(),amount,display.getDateItem().getValue(), new AsyncCallback<ArrayList<SummaryDetails>>() {
 
 			@Override
 			public void onFailure(Throwable caught) {
@@ -124,7 +124,7 @@ public class IouMasterListPresenter implements Presenter {
 				//displaySummaryData(result);
 				
 			}
-		});
+		});*/
 		
 	}
 	

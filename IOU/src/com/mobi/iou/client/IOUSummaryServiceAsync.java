@@ -8,10 +8,10 @@ import com.mobi.iou.server.SummaryDetails;
 
 public interface IOUSummaryServiceAsync {
 
-	void getSummaryDetails(AsyncCallback<ArrayList<SummaryDetails>> callback);
+	/*void getSummaryDetails(AsyncCallback<ArrayList<SummaryDetails>> callback);
 
 	void AddItemReturnSummary(String name, String description, double amount,
 			Date transactionDate,
-			AsyncCallback<ArrayList<SummaryDetails>> callback);
+			AsyncCallback<ArrayList<SummaryDetails>> callback);*/
 
 }
