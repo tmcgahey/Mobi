@@ -24,13 +24,13 @@ public class AccountSummaryResource extends ServerResource {
 		User user = userService.getCurrentUser();
 		
 		PersistenceManager pm = PMF.get().getPersistenceManager();
-		Query query = pm.newQuery(Account.class);
+		Query query = pm.newQuery(AccountDB.class);
 		query.setFilter("accountOwnerID == accountOwnerIDParam");
 		query.declareParameters("String accountOwnerIDParam");
 
-		List<Account> accounts = null;
+		List<AccountDB> accounts = null;
 		try {
-			accounts = (List<Account>) query.execute(user.getUserId());
+			accounts = (List<AccountDB>) query.execute(user.getUserId());
 		} finally {
 			query.closeAll();
 		}
@@ -38,7 +38,7 @@ public class AccountSummaryResource extends ServerResource {
 		JSONArray summaryJSONArray = new JSONArray();
 		
 		if (!accounts.isEmpty()) {
-			for (Account a : accounts) {		
+			for (AccountDB a : accounts) {		
 				
 				SummaryDetails currSummary = new SummaryDetails(a.getAccountName(), "", a.getAccountSum());
 				JSONObject summaryJSON = new JSONObject(currSummary);

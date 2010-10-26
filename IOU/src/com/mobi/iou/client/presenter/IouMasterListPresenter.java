@@ -16,17 +16,15 @@ import com.google.gwt.http.client.RequestException;
 import com.google.gwt.http.client.Response;
 import com.google.gwt.http.client.URL;
 import com.google.gwt.i18n.client.NumberFormat;
+import com.google.gwt.json.client.JSONObject;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.gwt.user.datepicker.client.DateBox;
-import com.mobi.iou.client.IOUSummaryService;
-import com.mobi.iou.client.IOUSummaryServiceAsync;
+import com.mobi.iou.client.AccountLineItemJSON;
 import com.mobi.iou.client.SummaryDetailsJSON;
-//import com.mobi.iou.server.SummaryDetails;
 
 public class IouMasterListPresenter implements Presenter {
 
@@ -46,8 +44,6 @@ public class IouMasterListPresenter implements Presenter {
 	@SuppressWarnings("unused")
 	private final HandlerManager eventBus;
 	private final Display display;
-	private final IOUSummaryServiceAsync summaryRPCService = GWT
-			.create(IOUSummaryService.class);
 
 	public IouMasterListPresenter(HandlerManager eventBus,String logoutURL, Display view) {
 		this.eventBus = eventBus;
@@ -111,21 +107,55 @@ public class IouMasterListPresenter implements Presenter {
 			amount = amount * -1;
 		}
 		
-		/*summaryRPCService.AddItemReturnSummary(display.getTxtName().getText(), display.getTxtDescription().getText(),amount,display.getDateItem().getValue(), new AsyncCallback<ArrayList<SummaryDetails>>() {
-
-			@Override
-			public void onFailure(Throwable caught) {
-				Window.alert("Error adding line item");
-				
-			}
-
-			@Override
-			public void onSuccess(ArrayList<SummaryDetails> result) {
-				//displaySummaryData(result);
-				
-			}
-		});*/
 		
+		String url = GWT.getModuleBaseURL() + "accountlineitem";
+		url = URL.encode(url);
+		
+		//RequestBuilder addItemRequest = new RequestBuilder(RequestBuilder.POST,url);
+
+		AccountLineItemJSON lineItemJSON = (AccountLineItemJSON) AccountLineItemJSON.createObject();
+		lineItemJSON.setName("test");
+
+		JSONObject t = new JSONObject(lineItemJSON);
+		String test = t.toString();
+		
+		/*JSONObject addItemJSON = new JSONObject();
+		try {
+			addItemJSON.put("name", new JSONString(display.getTxtName().getText()));
+			addItemJSON.put("description", new JSONString( display.getTxtDescription().getText()));
+			addItemJSON.put("amount", new JSONNumber(amount));
+			addItemJSON.put("date", new JSONString(display.getDateItem().getValue().toString()));
+		} catch (JSONException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}*/
+		
+		
+		/*try {
+			@SuppressWarnings("unused")
+			Request request = addItemRequest.sendRequest(addItemJSON.toString(), new RequestCallback() {
+				
+				@Override
+				public void onResponseReceived(Request request, Response response) {
+					if (200 == response.getStatusCode()) {
+						populateSummary();
+					} else {
+						Window.alert("Couldn't add Item (" + response.getStatusText()
+								+ ")");
+					}
+					
+				}
+				
+				@Override
+				public void onError(Request request, Throwable exception) {
+					Window.alert("Couldn't add item");
+				}
+			});
+			
+		} catch (RequestException e) {
+			Window.alert("Error adding item.");
+		}
+		*/
 	}
 	
 	private void displaySummaryData(JsArray<SummaryDetailsJSON> summaryList) {
