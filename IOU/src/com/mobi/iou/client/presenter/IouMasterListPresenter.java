@@ -111,29 +111,20 @@ public class IouMasterListPresenter implements Presenter {
 		String url = GWT.getModuleBaseURL() + "accountlineitem";
 		url = URL.encode(url);
 		
-		//RequestBuilder addItemRequest = new RequestBuilder(RequestBuilder.POST,url);
+		RequestBuilder addItemRequest = new RequestBuilder(RequestBuilder.POST,url);
+		addItemRequest.setHeader("Content-Type","application/x-www-form-urlencoded");
 
+		
+		
 		AccountLineItemJSON lineItemJSON = (AccountLineItemJSON) AccountLineItemJSON.createObject();
 		lineItemJSON.setName("test");
 
-		JSONObject t = new JSONObject(lineItemJSON);
-		String test = t.toString();
+		JSONObject addLineItem = new JSONObject();
+		addLineItem.put("addLineItem", new JSONObject(lineItemJSON) );
 		
-		/*JSONObject addItemJSON = new JSONObject();
 		try {
-			addItemJSON.put("name", new JSONString(display.getTxtName().getText()));
-			addItemJSON.put("description", new JSONString( display.getTxtDescription().getText()));
-			addItemJSON.put("amount", new JSONNumber(amount));
-			addItemJSON.put("date", new JSONString(display.getDateItem().getValue().toString()));
-		} catch (JSONException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}*/
-		
-		
-		/*try {
 			@SuppressWarnings("unused")
-			Request request = addItemRequest.sendRequest(addItemJSON.toString(), new RequestCallback() {
+			Request request = addItemRequest.sendRequest(addLineItem.toString(), new RequestCallback() {
 				
 				@Override
 				public void onResponseReceived(Request request, Response response) {
@@ -155,7 +146,7 @@ public class IouMasterListPresenter implements Presenter {
 		} catch (RequestException e) {
 			Window.alert("Error adding item.");
 		}
-		*/
+		
 	}
 	
 	private void displaySummaryData(JsArray<SummaryDetailsJSON> summaryList) {
