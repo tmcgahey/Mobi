@@ -5,7 +5,7 @@
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="com.google.gwt.eclipse.core.GWT_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Program Files/Restlet Framework/Edition GAE/2.1 Snapshot/lib/org.restlet.jar"/>
-	<classpathentry kind="lib" path="C:/Program Files/Restlet Framework/Edition GAE/2.1 Snapshot/lib/org.restlet.ext.servlet.jar"/>
+	<classpathentry kind="lib" path="/home/tmcgahey/Documents/Mobi/IOUDependencies/org.restlet.ext.servlet.jar"/>
+	<classpathentry kind="lib" path="/home/tmcgahey/Documents/Mobi/IOUDependencies/org.restlet.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
 </classpath>
