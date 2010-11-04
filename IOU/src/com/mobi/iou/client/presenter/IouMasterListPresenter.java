@@ -112,12 +112,16 @@ public class IouMasterListPresenter implements Presenter {
 		url = URL.encode(url);
 		
 		RequestBuilder addItemRequest = new RequestBuilder(RequestBuilder.POST,url);
-		addItemRequest.setHeader("Content-Type","application/x-www-form-urlencoded");
+		//addItemRequest.setHeader("Content-Type","application/x-www-form-urlencoded");
 
 		
 		
 		AccountLineItemJSON lineItemJSON = (AccountLineItemJSON) AccountLineItemJSON.createObject();
-		lineItemJSON.setName("test");
+		lineItemJSON.setName(display.getTxtName().getText());
+		lineItemJSON.setAmount(amount);
+		lineItemJSON.setDescription(display.getTxtDescription().getText());
+		//lineItemJSON.setDate(display.getDateItem().getValue().toString());
+		lineItemJSON.setDate("2010/10/25");
 
 		JSONObject addLineItem = new JSONObject();
 		addLineItem.put("addLineItem", new JSONObject(lineItemJSON) );
