@@ -1,9 +1,5 @@
 package com.mobi.iou.server;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 import javax.jdo.annotations.IdGeneratorStrategy;
 import javax.jdo.annotations.PersistenceCapable;
 import javax.jdo.annotations.Persistent;
@@ -22,9 +18,6 @@ public class AccountDB {
 	private String accountName;
 	private String accountOwnerID;
 	private double accountSum = 0.0;
-	
-	@Persistent(mappedBy = "account")
-	private List<AccountLineItemDB> lineItems = null;
 	
 	public AccountDB(String accountName, String accountOwnerID) {
 		this.accountName = accountName;
@@ -50,21 +43,6 @@ public class AccountDB {
 
 	public void setAccountOwnerID(String userID) {
 		this.accountOwnerID = userID;
-	}
-	
-	public List<AccountLineItemDB> getLineItems() {
-		return lineItems;
-	}
-	
-	public void addLineItem(String description,double amount, Date transactionDate ) {
-		accountSum += amount;
-		AccountLineItemDB lineItem = new AccountLineItemDB(description, amount,transactionDate);
-		
-		if(lineItems == null) {
-			lineItems = new ArrayList<AccountLineItemDB>();
-		}
-		
-		lineItems.add(lineItem);
 	}
 
 	public void setAccountSum(double accountSum) {

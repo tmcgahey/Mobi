@@ -20,11 +20,13 @@ public class AccountLineItemDB {
 	private double amount;
 	private Date transactionDate;
 	private AccountDB account;
+	private Key accountKey;
 	
-	public AccountLineItemDB(String description, double amount,Date transactionDate) {
+	public AccountLineItemDB(String description, double amount,Date transactionDate,Key accountKey ) {
 		this.description = description;
 		this.amount = amount;
 		this.transactionDate = transactionDate;
+		this.accountKey = accountKey;
 	}
 	
 	public Key getKey() {
@@ -58,5 +60,9 @@ public class AccountLineItemDB {
 	
 	public AccountDB getAccount() {
 		return account;
+	}
+
+	public Key getAccountKey() {
+		return accountKey;
 	}
 }

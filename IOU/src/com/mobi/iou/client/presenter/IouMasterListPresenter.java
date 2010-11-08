@@ -112,9 +112,6 @@ public class IouMasterListPresenter implements Presenter {
 		url = URL.encode(url);
 		
 		RequestBuilder addItemRequest = new RequestBuilder(RequestBuilder.POST,url);
-		//addItemRequest.setHeader("Content-Type","application/x-www-form-urlencoded");
-
-		
 		
 		AccountLineItemJSON lineItemJSON = (AccountLineItemJSON) AccountLineItemJSON.createObject();
 		lineItemJSON.setName(display.getTxtName().getText());
@@ -132,7 +129,7 @@ public class IouMasterListPresenter implements Presenter {
 				
 				@Override
 				public void onResponseReceived(Request request, Response response) {
-					if (200 == response.getStatusCode()) {
+					if (201 == response.getStatusCode()) {
 						populateSummary();
 					} else {
 						Window.alert("Couldn't add Item (" + response.getStatusText()

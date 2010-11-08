@@ -29,6 +29,7 @@ public class IOUApplication extends Application {
 		router.attach("/iou/login", LoginResource.class);
 		router.attach("/iou/summary", AccountSummaryResource.class);
 		router.attach("/iou/accountlineitem", AccountLineItemResource.class);
+		router.attach("/iou/accountlineitem/{accountId}", AccountLineItemResource.class);
 
  
         return router;
